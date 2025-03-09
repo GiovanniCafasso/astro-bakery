@@ -1,38 +1,20 @@
 ---
-// Header.astro
+// src/components/Header.astro
 ---
 
-<header class="py-6">
-  <nav class="flex flex-col md:flex-row md:justify-between md:items-center relative">
-    <!-- Logo -->
-    <div class="flex justify-center md:justify-start mb-4 md:mb-0">
-      <div class="text-4xl font-bold text-pink-600 flex items-center space-x-3">
-        <img src="/path-to-your-logo.png" alt="Dolce Vita Logo" class="h-12 w-auto" />
-        <h1 class="font-playfair">Dolce Vita</h1>
-      </div>
-    </div>
-
-    <!-- Menu desktop -->
-    <div class="hidden md:flex md:space-x-10 menu-items-desktop font-playfair text-lg">
-      <a href="#storia" class="text-gray-800 hover:text-pink-600 transition border-b-2 border-transparent hover:border-pink-500 px-1 py-1">Storia</a>
-      <a href="#specialita" class="text-gray-800 hover:text-pink-600 transition border-b-2 border-transparent hover:border-pink-500 px-1 py-1">Specialità</a>
-      <a href="#contatti" class="text-gray-800 hover:text-pink-600 transition border-b-2 border-transparent hover:border-pink-500 px-1 py-1">Contatti</a>
-    </div>
-
-    <!-- Pulsante menu mobile -->
-    <div class="md:hidden flex justify-center">
-      <button class="menu-button bg-pink-100 hover:bg-pink-200 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none shadow-md transition-transform transform hover:scale-105">
-        <i class="fas fa-bars text-pink-600"></i>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Dolce Vita</div>
+      <ul class="nav-links" :class="{ 'active': mobileMenuOpen }">
+        <li><a href="#home" @click="mobileMenuOpen = false">Home</a></li>
+        <li><a href="#storia" @click="mobileMenuOpen = false">Storia</a></li>
+        <li><a href="#products" @click="mobileMenuOpen = false">Prodotti</a></li>
+        <li><a href="#contact" @click="mobileMenuOpen = false">Contatti</a></li>
+      </ul>
+      <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
+        <i class="fas" :class="{ 'fa-bars': !mobileMenuOpen, 'fa-times': mobileMenuOpen }"></i>
       </button>
-    </div>
-
-    <!-- Menu mobile -->
-    <div class="menu-items-mobile hidden md:hidden absolute top-full left-0 mt-2 bg-white p-5 rounded-lg shadow-lg z-10 w-full border-2 border-pink-100">
-      <div class="font-playfair text-lg space-y-4">
-        <a href="#storia" class="block text-gray-800 hover:text-pink-600 transition pl-4 border-l-4 border-transparent hover:border-pink-500 py-2">Storia</a>
-        <a href="#specialita" class="block text-gray-800 hover:text-pink-600 transition pl-4 border-l-4 border-transparent hover:border-pink-500 py-2">Specialità</a>
-        <a href="#contatti" class="block text-gray-800 hover:text-pink-600 transition pl-4 border-l-4 border-transparent hover:border-pink-500 py-2">Contatti</a>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </header>

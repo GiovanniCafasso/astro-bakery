@@ -1,20 +1,13 @@
 ---
-// Hero.astro
+// src/components/Hero.astro
 ---
 
-<div class="py-12 flex-grow flex items-center">
-  <div class="grid md:grid-cols-2 gap-12 items-center mx-auto">
-    <div class="order-2 md:order-1 text-center md:text-left">
-      <h2 class="text-4xl md:text-5xl font-bold font-playfair text-gray-800 mb-4 leading-tight">Pasticceria Artigianale <span class="text-pink-600">dal 1987</span></h2>
-      <p class="text-xl text-gray-600 mb-8">Dolci creati con passione, tradizione e ingredienti di prima qualità</p>
-      <a href="#specialita" class="bg-gradient-to-r from-pink-500 to-amber-400 text-white px-8 py-3 rounded-lg hover:opacity-90 transition shadow-lg inline-block font-medium">Scopri le nostre specialità</a>
-    </div>
-    <div class="order-1 md:order-2 flex justify-center">
-      <div class="relative w-64 h-64 md:w-72 md:h-72 animate-float">
-<img src="/placeholder-dolci.jpg" alt="Assortimento di dolci" class="rounded-full shadow-2xl border-8 border-white w-full h-full object-cover" />        <div class="absolute -bottom-4 -right-4 bg-amber-400 text-gray-800 rounded-full w-24 h-24 flex items-center justify-center font-bold shadow-lg transform rotate-12">
-          <span>Dal 1987</span>
-        </div>
-      </div>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Pasticceria Artigianale dal 1965</h1>
+      <p>Dove la tradizione incontra l'innovazione per creare dolci momenti di pura gioia.</p>
+      <a href="#products" class="btn">Scopri i nostri dolci</a>
     </div>
   </div>
-</div>
+</section>

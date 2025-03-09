@@ -1,5 +1,5 @@
 ---
-// Layout.astro
+// src/layouts/Layout.astro
 import '../styles/global.css';
 ---
 
@@ -9,43 +9,10 @@ import '../styles/global.css';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolce Vita - Pasticceria Artigianale</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
-<body class="font-montserrat scroll-smooth bg-gradient-to-b from-amber-50 to-pink-50">
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<body x-data="{ mobileMenuOpen: false }">
   <slot />
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.querySelector('.menu-button');
-    const menuItems = document.querySelector('.menu-items-mobile');
-
-    menuButton?.addEventListener('click', function () {
-      const menuIcon = menuButton.querySelector('i');
-
-      if (menuItems?.classList.contains('hidden')) {
-        // Apri il menu
-        menuItems.classList.remove('hidden');
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-      } else {
-        // Chiudi il menu
-        menuItems.classList.add('hidden');
-        menuIcon.classList.add('fa-bars');
-        menuIcon.classList.remove('fa-times');
-      }
-    });
-
-    // Chiudi il menu se si clicca fuori
-    document.addEventListener('click', function (event) {
-      if (!menuButton.contains(event.target) && !menuItems.contains(event.target)) {
-        menuItems.classList.add('hidden');
-        menuButton.querySelector('i').classList.add('fa-bars');
-        menuButton.querySelector('i').classList.remove('fa-times');
-      }
-    });
-  });
-</script>
 </body>
 </html>

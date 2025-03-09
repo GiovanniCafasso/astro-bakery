@@ -1,25 +1,19 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Storia from '../components/Storia.astro';
-import Specialita from '../components/Specialita.astro';
-import Contatti from '../components/Contatti.astro';
+import Products from '../components/Products.astro';
+import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-  <!-- Hero Section -->
-  <div class="py-4 mb-4">
-    <Header />
-  </div>
-  
-  <section class="hero-pattern rounded-3xl shadow-lg p-8 mb-20">
-    <Hero />
-  </section>
-  
+  <Header />
+  <Hero />
   <Storia />
-  <Specialita />
-  <Contatti />
+  <Products />
+  <Contact />
   <Footer />
 </Layout>
