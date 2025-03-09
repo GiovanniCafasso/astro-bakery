@@ -8,11 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+  justify-content: space-between; /* Aggiungi questa riga */
 }
 
-.contact-info {
+.contact-info, .hours {
   flex: 1;
   min-width: 300px;
+  max-width: calc(50% - 20px); /* Aggiungi questa riga */
 }
 
 .info-item {
@@ -31,11 +33,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-}
-
-.hours {
-  flex: 1;
-  min-width: 300px;
 }
 
 .hours-list {
