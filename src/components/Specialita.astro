@@ -27,13 +27,18 @@ const specialita = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
       {specialita.map(dolce => (
         <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-xl">
-          <div class="overflow-hidden" style="height: 180px;">
-<img src={dolce.immagine} alt={dolce.nome} class="w-full h-full object-cover transform hover:scale-110 transition duration-500" />          </div>
-          <div class="p-6 border-t-4 border-pink-400">
-            <h3 class="text-xl font-bold font-playfair text-gray-800 mb-2">{dolce.nome}</h3>
-            <p class="text-gray-600">{dolce.descrizione}</p>
-          </div>
-        </div>
+  <div class="overflow-hidden" style="aspect-ratio: 4/3;"> <!-- Imposta un rapporto di aspetto fisso -->
+    <img
+      src={dolce.immagine}
+      alt={dolce.nome}
+      class="w-full h-full object-cover transform hover:scale-110 transition duration-500"
+    />
+  </div>
+  <div class="p-6 border-t-4 border-pink-400">
+    <h3 class="text-xl font-bold font-playfair text-gray-800 mb-2">{dolce.nome}</h3>
+    <p class="text-gray-600">{dolce.descrizione}</p>
+  </div>
+</div>
       ))}
     </div>
     
