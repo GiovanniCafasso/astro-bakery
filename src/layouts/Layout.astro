@@ -11,6 +11,20 @@ import '../styles/global.css';
   <title>Dolce Vita - Pasticceria Artigianale</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init();
+    });
+  </script>
+  <script>
+  import Alpine from 'alpinejs';
+  import '@fortawesome/fontawesome-free/css/all.css';
+
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>
 </head>
 <body x-data="{ mobileMenuOpen: false }">
   <slot />

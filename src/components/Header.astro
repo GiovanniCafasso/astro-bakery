@@ -4,7 +4,7 @@
 
 <header>
   <div class="container">
-    <nav>
+    <nav x-data="{ mobileMenuOpen: false }" @click.away="mobileMenuOpen = false">
       <div class="logo">Dolce Vita</div>
       <ul class="nav-links" :class="{ 'active': mobileMenuOpen }">
         <li><a href="#home" @click="mobileMenuOpen = false">Home</a></li>
@@ -12,7 +12,7 @@
         <li><a href="#products" @click="mobileMenuOpen = false">Prodotti</a></li>
         <li><a href="#contact" @click="mobileMenuOpen = false">Contatti</a></li>
       </ul>
-      <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
+      <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Menu" :aria-expanded="mobileMenuOpen">
         <i class="fas" :class="{ 'fa-bars': !mobileMenuOpen, 'fa-times': mobileMenuOpen }"></i>
       </button>
     </nav>
