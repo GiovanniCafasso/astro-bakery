@@ -1,7 +1,7 @@
 /* src/styles/components/footer.css */
 footer {
   background-color: var(--dark);
-  color: white;
+  color: var(--light);
   padding: 50px 0 20px;
 }
 
@@ -29,7 +29,7 @@ footer {
 }
 
 .social-links a {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--accent);
   color: white;
   width: 40px;
   height: 40px;

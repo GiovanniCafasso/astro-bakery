@@ -8,11 +8,11 @@
 @import './components/footer.css';
 
 :root {
-  --primary: #e91e63;
-  --secondary: #ff9800;
-  --light: #fff5f7;
-  --dark: #2b2b2b;
-  --accent: #8e24aa;
+  --primary: #D4A276;
+  --secondary: #FFD700;
+  --light: #FFF8E7;
+  --dark: #4B3621;
+  --accent: #FF6F61;
 }
 
 * {
@@ -43,7 +43,7 @@ h1, h2, h3 {
 .btn {
   display: inline-block;
   background-color: var(--primary);
-  color: white;
+  color: var(--dark);
   padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
