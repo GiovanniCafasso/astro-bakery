@@ -1,0 +1,46 @@
+---
+// Specialita.astro
+const specialita = [
+  {
+    nome: "Torta \"Sogno di Maria\"",
+    descrizione: "La nostra specialità storica: pan di Spagna al cioccolato, crema chantilly e frutti di bosco freschi.",
+    immagine: "/torta-maria.jpg"
+  },
+  {
+    nome: "Cannoli Siciliani",
+    descrizione: "Realizzati secondo la ricetta tradizionale, con ricotta fresca di pecora e scorzette di arancia candita.",
+    immagine: "/cannoli.jpg"
+  },
+  {
+    nome: "Macaron Assortiti",
+    descrizione: "Il tocco francese della nostra pasticceria: delicati, colorati e disponibili in numerosi gusti.",
+    immagine: "/macaron.jpg"
+  }
+];
+---
+
+<section id="specialita" class="py-20 bg-gradient-to-b from-pink-50 to-amber-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold font-playfair text-center mb-6 text-gray-800 section-title">Le Nostre Specialità</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">Scopri i dolci che ci hanno reso famosi, preparati ogni giorno con ingredienti freschi e passione artigianale</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
+      {specialita.map(dolce => (
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+          <div class="overflow-hidden" style="height: 180px;">
+<img src={dolce.immagine} alt={dolce.nome} class="w-full h-full object-cover transform hover:scale-110 transition duration-500" />          </div>
+          <div class="p-6 border-t-4 border-pink-400">
+            <h3 class="text-xl font-bold font-playfair text-gray-800 mb-2">{dolce.nome}</h3>
+            <p class="text-gray-600">{dolce.descrizione}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="#contatti" class="bg-gradient-to-r from-amber-400 to-pink-500 text-white px-8 py-3 rounded-full hover:opacity-90 transition shadow-lg inline-block font-medium">
+        <i class="fas fa-map-marker-alt mr-2"></i>Vieni a trovarci
+      </a>
+    </div>
+  </div>
+</section>

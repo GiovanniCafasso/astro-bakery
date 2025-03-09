@@ -1,1 +1,62 @@
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-pattern {
+  background: linear-gradient(120deg, #FBD3E9 0%, #f8e5ad 100%);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #EC4899, #F59E0B);
+  margin: 12px auto 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animazione per il menu mobile */
+.menu-items-mobile {
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  .menu-items-mobile.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Centratura del contenuto */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Stile per le sezioni */
+  section {
+    padding: 60px 0;
+  }
+  
+  /* Stile per il footer */
+  footer {
+    background: linear-gradient(to right, #ec4899, #f59e0b);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
