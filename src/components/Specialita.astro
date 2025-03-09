@@ -26,12 +26,12 @@ const specialita = [
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
       {specialita.map(dolce => (
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-xl">
-  <div class="overflow-hidden" style="aspect-ratio: 4/3;"> <!-- Imposta un rapporto di aspetto fisso -->
+<div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-xl max-w-sm mx-auto"> <!-- Aggiungi max-w-sm e mx-auto -->
+  <div class="overflow-hidden" style="aspect-ratio: 4/3;">
     <img
       src={dolce.immagine}
       alt={dolce.nome}
-      class="w-full h-full object-cover transform hover:scale-110 transition duration-500"
+      class="w-full h-full object-cover transform hover:scale-110 transition duration-500 max-w-full max-h-48" <!-- Aggiungi max-h-48 -->
     />
   </div>
   <div class="p-6 border-t-4 border-pink-400">
