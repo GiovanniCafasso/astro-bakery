@@ -1,45 +1,55 @@
 ---
 // src/components/Products.astro
-const specialita = [
+const categorie = [
   {
-    nome: "Cannoli Siciliani",
-    descrizione: "I nostri famosi cannoli con croccante cialda arrotolata e ripieno di crema di ricotta fresca, aromatizzata con scorzette d'arancia e gocce di cioccolato.",
-    immagine: "/cannoli.jpg"
+    nome: "Pasticceria",
+    prodotti: [
+      {
+        nome: "Cannoli Siciliani",
+        descrizione: "I nostri famosi cannoli con croccante cialda arrotolata e ripieno di crema di ricotta fresca, aromatizzata con scorzette d'arancia e gocce di cioccolato.",
+        immagine: "/cannoli.jpg"
+      },
+      {
+        nome: "Millefoglie Classica",
+        descrizione: "Strati sottili di pasta sfoglia caramellata alternati a delicata crema chantilly e decorati con frutta fresca di stagione.",
+        immagine: "/millefoglie.jpg"
+      },
+      {
+        nome: "Macaron Assortiti",
+        descrizione: "Delicati gusci di meringa alle mandorle con vari ripieni: dal classico cioccolato fondente alle più innovative combinazioni come lampone e rosa.",
+        immagine: "/macaron.jpg"
+      },
+      {
+        nome: "Tiramisù Tradizionale",
+        descrizione: "Savoiardi inzuppati nel caffè espresso, alternati a strati di crema al mascarpone, con una leggera spolverata di cacao amaro.",
+        immagine: "/tiramisu.jpg"
+      }
+    ]
   },
   {
-    nome: "Millefoglie Classica",
-    descrizione: "Strati sottili di pasta sfoglia caramellata alternati a delicata crema chantilly e decorati con frutta fresca di stagione.",
-    immagine: "/millefoglie.jpg"
-  },
-  {
-    nome: "Macaron Assortiti",
-    descrizione: "Delicati gusci di meringa alle mandorle con vari ripieni: dal classico cioccolato fondente alle più innovative combinazioni come lampone e rosa.",
-    immagine: "/macaron.jpg"
-  },
-  {
-    nome: "Tiramisù Tradizionale",
-    descrizione: "Savoiardi inzuppati nel caffè espresso, alternati a strati di crema al mascarpone, con una leggera spolverata di cacao amaro.",
-    immagine: "/tiramisu.jpg"
-  },
-  {
-    nome: "Torta Sacher",
-    descrizione: "La classica torta al cioccolato con uno strato di marmellata di albicocche e una glassa al cioccolato fondente.",
-    immagine: "/sacher.jpg"
-  },
-  {
-    nome: "Cheesecake ai Frutti di Bosco",
-    descrizione: "Una base croccante di biscotti, una crema al formaggio morbida e una golosa copertura di frutti di bosco freschi.",
-    immagine: "/cheesecake.jpg"
-  },
-  {
-    nome: "Profiteroles",
-    descrizione: "Piccoli bignè ripieni di crema pasticcera e ricoperti di cioccolato fondente.",
-    immagine: "/profiteroles.jpg"
-  },
-  {
-    nome: "Torta della Nonna",
-    descrizione: "Una base di pasta frolla, crema pasticcera e una spolverata di pinoli tostati.",
-    immagine: "/torta-nonna.jpg"
+    nome: "Lievitati",
+    prodotti: [
+      {
+        nome: "Cornetti al Burro",
+        descrizione: "Soffici cornetti fatti con burro di prima qualità, perfetti per la colazione.",
+        immagine: "/cornetti.jpg"
+      },
+      {
+        nome: "Brioche alla Crema",
+        descrizione: "Brioche farcite con crema pasticcera artigianale.",
+        immagine: "/brioche.jpg"
+      },
+      {
+        nome: "Panini al Latte",
+        descrizione: "Panini soffici e profumati, ideali per la colazione o per accompagnare i pasti.",
+        immagine: "/panini-latte.jpg"
+      },
+      {
+        nome: "Bomboloni",
+        descrizione: "Dolci fritti ripieni di crema pasticcera o cioccolato.",
+        immagine: "/bomboloni.jpg"
+      }
+    ]
   }
 ];
 ---
@@ -47,20 +57,26 @@ const specialita = [
 <section class="products" id="products">
   <div class="container">
     <div class="section-title">
-      <h2>I Nostri Dolci</h2>
+      <h2>I Nostri Prodotti</h2>
     </div>
-    <div class="products-grid">
-      {specialita.map(dolce => (
-        <div class="product-card">
-          <div class="product-image">
-            <img src={dolce.immagine} alt={dolce.nome} />
-          </div>
-          <div class="product-info">
-            <h3>{dolce.nome}</h3>
-            <p>{dolce.descrizione}</p>
-          </div>
+
+    {categorie.map(categoria => (
+      <div class="category-section">
+        <h3 class="category-title">{categoria.nome}</h3>
+        <div class="products-grid">
+          {categoria.prodotti.map(prodotto => (
+            <div class="product-card">
+              <div class="product-image">
+                <img src={prodotto.immagine} alt={prodotto.nome} />
+              </div>
+              <div class="product-info">
+                <h4>{prodotto.nome}</h4>
+                <p>{prodotto.descrizione}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 </section>

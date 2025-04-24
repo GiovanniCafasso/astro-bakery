@@ -22,6 +22,22 @@ footer {
   margin-bottom: 20px;
 }
 
+.footer-logo .scroll-top {
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-logo .scroll-top:hover {
+  color: var(--accent);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-duration: 0.3s;
+}
+
 .social-links {
   display: flex;
   gap: 15px;
