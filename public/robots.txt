@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Sitemap: https://astro-bakery.pages.dev/sitemap.xml
+
+# Directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Files
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow images and assets
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+
+# Crawl delay
+Crawl-delay: 10 
