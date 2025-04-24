@@ -8,19 +8,48 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  justify-content: space-between; /* Aggiungi questa riga */
+  justify-content: space-between;
 }
 
 .contact-info, .hours {
   flex: 1;
   min-width: 300px;
-  max-width: calc(50% - 20px); /* Aggiungi questa riga */
+  max-width: calc(50% - 20px);
 }
 
 .info-item {
   margin-bottom: 30px;
   display: flex;
   align-items: flex-start;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+}
+
+.contact-link:hover .info-icon {
+  background-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .contact-link {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .contact-link:active {
+    transform: scale(0.98);
+  }
+
+  .contact-link:active .info-icon {
+    background-color: var(--accent);
+  }
 }
 
 .info-icon {
@@ -33,6 +62,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 .hours-list {
